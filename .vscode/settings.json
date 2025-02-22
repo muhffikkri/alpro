@@ -1,6 +1,6 @@
 {
-    "C_Cpp.default.compilerPath": "/usr/bin/g++",
-    "files.associations": {
-        "introduction_c": "cpp"
-    }
+  "C_Cpp.default.compilerPath": "/usr/bin/gcc",
+  "files.associations": {
+    "introduction_c": "cpp"
+  }
 }
