@@ -1,6 +1,6 @@
 /*Nama File 	: namaHari.c*/
 /*Deskripsi 	: Menampilkan nama hari tergantung dari nilai input*/
-/*Pembuat   	: 24060124130069*/
+/*Pembuat   	: 24060124130069-Muhammad Fikri*/
 /*Tgl Pembuatan	: 26 Februari 2025 10.30*/
 
 #include <stdio.h> /*header file*/
