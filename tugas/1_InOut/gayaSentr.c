@@ -14,7 +14,7 @@ int main()
     /*Algoritma*/
     scanf("%f %f %f", &m, &v, &r);
     f = m * ((v * v) / r);
-    printf("%.3f", f);
+    printf("Gaya yang terjadi : %.3f", f);
 
     return 0;
 }

@@ -14,7 +14,7 @@ int main()
     /*Algoritma*/
     scanf("%f %f %f", &v0, &t, &a);
     s = v0 * t + 0.5 * (a * (t * t));
-    printf("%.3f", s);
+    printf("Jarak GLBB : %.3f", s);
 
     return 0;
 }

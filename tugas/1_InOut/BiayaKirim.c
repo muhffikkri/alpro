@@ -14,7 +14,7 @@ int main()
     /*Algoritma*/
     scanf("%d %d", &berat, &jarak);
     biaya = 10000 + (berat * 5000) + (jarak * 2000);
-    printf("%d\n", biaya);
+    printf("Biaya Kirim : %d\n", biaya);
 
     return 0;
 }

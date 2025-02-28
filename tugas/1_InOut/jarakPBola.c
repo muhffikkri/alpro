@@ -15,7 +15,7 @@ int main()
     /*Algoritma*/
     scanf("%f %f %f", &v0, &t, &g);
     y = v0 * t - 0.5 * (g * (t * t));
-    printf("%.3f", y);
+    printf("Jarak Parabola : %.3f", y);
 
     return 0;
 }
