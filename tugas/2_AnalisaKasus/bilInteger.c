@@ -10,9 +10,10 @@ int main()
 {
     /*Kamus*/
     int i;
-    scanf("%d", &i);
 
     /*Algoritma*/
+    scanf("%d", &i);
+
     if (i > 0)
     {
         printf("Bilangan i bernilai positif");

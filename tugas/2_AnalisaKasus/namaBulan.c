@@ -10,9 +10,10 @@ int main()
 {
     /*Kamus*/
     int bulan;
-    scanf("%d", &bulan);
 
     /*Algoritma*/
+    scanf("%d", &bulan);
+
     if (bulan < 1 || bulan > 7)
     {
         printf("Masukan nomor bulan tidak tepat");

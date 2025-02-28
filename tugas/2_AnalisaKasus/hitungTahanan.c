@@ -10,9 +10,10 @@ int main()
 {
     /*Kamus*/
     int i, j, k;
-    scanf("%d %d %d", &i, &j, &k);
 
     /*Algoritma*/
+    scanf("%d %d %d", &i, &j, &k);
+
     if (i < 0 || j < 0 || k < 0)
     {
         printf("Masukan tahanan tidak boleh negatif");

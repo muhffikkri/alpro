@@ -10,9 +10,10 @@ int main()
 {
     /*Kamus*/
     int hari;
-    scanf("%d", &hari);
 
     /*Algoritma*/
+    scanf("%d", &hari);
+
     if (hari < 1 || hari > 7)
     {
         printf("Masukan nomor hari tidak tepat");

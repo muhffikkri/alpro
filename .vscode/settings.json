@@ -1,6 +1,7 @@
 {
   "C_Cpp.default.compilerPath": "/usr/bin/gcc",
   "files.associations": {
-    "introduction_c": "cpp"
+    "introduction_c": "cpp",
+    "stdio.h": "c"
   }
 }
