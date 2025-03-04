@@ -1,7 +1,7 @@
 /*Nama File 	: volBolaKerct.c*/
 /*Deskripsi 	: Menghitung volume bola dan kerucut*/
 /*Pembuat   	: 24060124130069-Muhammad Fikri*/
-/*Tgl Pembuatan	: 28 Februari 2025 07.20 */
+/*Tgl Pembuatan	: 1 Maret 2025 07.20 */
 
 #include <stdio.h> /*header file*/
 
@@ -9,8 +9,8 @@
 int main()
 {
     /*Kamus*/
-    float r, Vb, Vk, PHI;
-    PHI = 3.1415;
+    float r, Vb, Vk;
+    const float PHI = 3.1415;
 
     /*Algoritma*/
     scanf("%f", &r);

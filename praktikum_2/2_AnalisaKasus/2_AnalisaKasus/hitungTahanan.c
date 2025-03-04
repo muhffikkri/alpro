@@ -1,7 +1,7 @@
 /*Nama File 	: hitungTahanan.c*/
 /*Deskripsi 	: Menjumlahkan 3 buah input bilangan bulat jika ketiganya non-negatif*/
 /*Pembuat   	: 24060124130069-Muhammad Fikri*/
-/*Tgl Pembuatan	: 26 Februari 2025 10.10*/
+/*Tgl Pembuatan	: 28 Februari 2025 11.30*/
 
 #include <stdio.h> /*header file*/
 

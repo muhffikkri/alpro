@@ -1,7 +1,7 @@
 /*Nama File 	: namaBulan.c*/
 /*Deskripsi 	: Menampilkan nama bulan tergantung dari nilai input*/
 /*Pembuat   	: 24060124130069-Muhammad Fikri*/
-/*Tgl Pembuatan	: 26 Februari 2025 10.20*/
+/*Tgl Pembuatan	: 28 Februari 2025 11.20*/
 
 #include <stdio.h> /*header file*/
 
@@ -14,7 +14,7 @@ int main()
     /*Algoritma*/
     scanf("%d", &bulan);
 
-    if (bulan < 1 || bulan > 7)
+    if (bulan < 1 || bulan > 12)
     {
         printf("Masukan nomor bulan tidak tepat");
     }

@@ -1,7 +1,7 @@
-/*Nama File 	: namaBulan.c*/
+/*Nama File 	: kallSS.c*/
 /*Deskripsi 	: Kalkulator sederhana*/
 /*Pembuat   	: 24060124130069-Muhammad Fikri*/
-/*Tgl Pembuatan	: 26 Februari 2025 10.20*/
+/*Tgl Pembuatan	: 26 Februari 2025 13.20*/
 
 #include <stdio.h> /*header file*/
 

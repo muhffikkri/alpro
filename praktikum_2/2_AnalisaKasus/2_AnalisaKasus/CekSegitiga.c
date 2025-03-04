@@ -1,7 +1,7 @@
 /*Nama File 	: CekSegitiga.c*/
-/*Deskripsi 	: Mengecek jenis segitiga*/
+/*Deskripsi 	: Memeriksa jenis segitiga*/
 /*Pembuat   	: 24060124130069-Muhammad Fikri*/
-/*Tgl Pembuatan	: 26 Februari 2025 11.00*/
+/*Tgl Pembuatan	: 26 Februari 2025 13.00*/
 
 #include <stdio.h> /*header file*/
 
@@ -17,6 +17,10 @@ int main()
     if (i <= 0 || j <= 0 || k <= 0)
     {
         printf("Terdapat nilai yang bukan sisi segitiga\n");
+    }
+    else if (i + j <= k || i + k <= j || j + k <= i)
+    {
+        printf("Bukan segitiga\n");
     }
     else
     {

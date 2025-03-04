@@ -1,7 +1,7 @@
 /*Nama File 	: gayaSentr.c*/
 /*Deskripsi 	: Menghitung gaya sentripetal*/
 /*Pembuat   	: 24060124130069-Muhammad Fikri*/
-/*Tgl Pembuatan	: 28 Februari 2025 07.00 */
+/*Tgl Pembuatan	: 1 Maret 2025 07.00 */
 
 #include <stdio.h> /*header file*/
 

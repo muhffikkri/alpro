@@ -1,7 +1,7 @@
 /*Nama File 	: jarakGLBB.c*/
-/*Deskripsi 	: Menghitung jarak gerak jatuh bebas*/
+/*Deskripsi 	: Menghitung jarak gerak lurus bebas beraturan*/
 /*Pembuat   	: 24060124130069-Muhammad Fikri*/
-/*Tgl Pembuatan	: 27 Februari 2025 07.40 */
+/*Tgl Pembuatan	: 1 Maret 2025 07.40 */
 
 #include <stdio.h> /*header file*/
 
