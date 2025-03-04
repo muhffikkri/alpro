@@ -1,7 +1,7 @@
 /*Nama File 	: CekBilPrima.c*/
-/*Deskripsi 	: Menampilkan bilangan prima*/
+/*Deskripsi 	: Menmeriksa sebuah bilangan apakah prima*/
 /*Pembuat   	: 24060124130069-Muhammad Fikri*/
-/*Tgl Pembuatan	: <diisikan tanggal dan jam>*/
+/*Tgl Pembuatan	: 5 Maret 2025 21.00*/
 
 #include <stdio.h> /*header file*/
 
@@ -9,29 +9,30 @@
 int main()
 {
     /*Kamus*/
-    int n, i, j;
-    i = 1;
-    j = 0;
+    int n, faktor, jumlahFaktor;
+    faktor = 1;
+    jumlahFaktor = 0;
 
     /*Algoritma*/
     scanf("%d", &n); /*input n*/
 
-    while (i <= n)
+    while (faktor <= n)
     {
-        if (j == 2)
+        if (n % faktor == 0)
         {
-            printf("%d adalah bilangan prima", &n);
+            jumlahFaktor++;
         }
-
-        if (n % i == 0)
-        {
-            printf("%d\n", i);
-            j++;
-        }
-        i++;
+        faktor++;
     }
 
-    printf("i bukan bilangan prima");
+    if (jumlahFaktor == 2)
+    {
+        printf("%d adalah bilangan prima\n", n);
+    }
+    else
+    {
+        printf("%d bukan bilangan prima\n", n);
+    }
 
     return 0;
 }

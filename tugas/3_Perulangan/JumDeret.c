@@ -1,7 +1,7 @@
 /*Nama File 	: JumDeret.c*/
-/*Deskripsi 	: Jumlah deret bilangan ril C*/
+/*Deskripsi 	: Jumlah deret bilangan bulat hingga bilangan ke n*/
 /*Pembuat   	: 24060124130069-Muhammad Fikri*/
-/*Tgl Pembuatan	: <diisikan tanggal dan jam>*/
+/*Tgl Pembuatan	: 5 Maret 2025 20.20*/
 
 #include <stdio.h> /*header file*/
 
@@ -9,16 +9,17 @@
 int main()
 {
     /*Kamus*/
-    int n, sum; /*variabel*/
+    int n, sum;
+    sum = 0;
 
     /*Algoritma*/
-    scanf("%d", &n); /*input n*/
+    scanf("%d", &n);
     for (int i = 1; i <= n; i++)
     {
-        sum += i;
+        sum = sum + i;
     }
 
-    printf("Jumlah deret bilangan = %d\n", sum); /*output jumlah deret bilangan*/
+    printf("Jumlah deret bilangan = %d\n", sum);
 
     return 0;
 }

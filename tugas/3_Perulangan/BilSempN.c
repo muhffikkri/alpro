@@ -1,7 +1,7 @@
-/*Nama File 	: CekBilPrima.c*/
-/*Deskripsi 	: Cek bilangan prima*/
+/*Nama File 	: BilSempN.c*/
+/*Deskripsi 	: Menampilkan bilangan sempurna hingga bilangan ke n*/
 /*Pembuat   	: 24060124130069-Muhammad Fikri*/
-/*Tgl Pembuatan	: <diisikan tanggal dan jam>*/
+/*Tgl Pembuatan	: 5 Maret 2025 21.45*/
 
 #include <stdio.h> /*header file*/
 
@@ -9,33 +9,28 @@
 int main()
 {
     /*Kamus*/
-    int n, i, j;
+    int n, faktor, jumlahFaktor;
 
     /*Algoritma*/
-    scanf("%d", &n); /*input n*/
+    scanf("%d", &n);
 
-    for (int k = 1; k <= n; k++)
+    for (int bilangan = 1; bilangan <= n; bilangan++)
     {
-        i = 1;
-        j = 0;
-        while (i < n)
+        faktor = 1;
+        jumlahFaktor = 0;
+
+        while (faktor < bilangan)
         {
-            if (n % i == 0)
+            if (bilangan % faktor == 0)
             {
-                printf("%d\n", i);
-                j = j + i;
-                j++;
+                jumlahFaktor = jumlahFaktor + faktor;
             }
-            i++;
+            faktor++;
         }
 
-        if (j == n)
+        if (jumlahFaktor == bilangan)
         {
-            printf("Bilangan %d adalah bilangan sempurna\n", n);
-        }
-        else
-        {
-            printf("Bilangan %d bukan bilangan sempurna\n", n);
+            printf("%d\n", bilangan);
         }
     }
 
