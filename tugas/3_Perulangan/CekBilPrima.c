@@ -10,28 +10,36 @@ int main()
 {
     /*Kamus*/
     int n, faktor, jumlahFaktor;
-    faktor = 1;
-    jumlahFaktor = 0;
 
     /*Algoritma*/
-    scanf("%d", &n); /*input n*/
+    scanf("%d", &n);
 
-    while (faktor <= n)
+    faktor = 1;
+    jumlahFaktor = 0;
+    if (n <= 0)
     {
-        if (n % faktor == 0)
-        {
-            jumlahFaktor++;
-        }
-        faktor++;
-    }
-
-    if (jumlahFaktor == 2)
-    {
-        printf("%d adalah bilangan prima\n", n);
+        printf("n harus lebih besar dari nol\n");
+        return 0;
     }
     else
     {
-        printf("%d bukan bilangan prima\n", n);
+        while (faktor <= n)
+        {
+            if (n % faktor == 0)
+            {
+                jumlahFaktor++;
+            }
+            faktor++;
+        }
+
+        if (jumlahFaktor == 2)
+        {
+            printf("%d adalah bilangan prima\n", n);
+        }
+        else
+        {
+            printf("%d bukan bilangan prima\n", n);
+        }
     }
 
     return 0;

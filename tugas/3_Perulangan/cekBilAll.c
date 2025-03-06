@@ -1,4 +1,4 @@
-/*Nama File 	: CekBilAll.c*/
+/*Nama File 	: cekBilAll.c*/
 /*Deskripsi 	: Memeriksa apakah sebuah bilangan sempurna atau prima atau bukan keduanya*/
 /*Pembuat   	: 24060124130069-Muhammad Fikri*/
 /*Tgl Pembuatan	: 5 Maret 2025 22.00*/
@@ -17,27 +17,35 @@ int main()
     faktor = 1;
     sempurna = 0;
     prima = 0;
-    while (faktor <= n)
+    if (n <= 0)
     {
-        if (n % faktor == 0)
-        {
-            sempurna = sempurna + faktor;
-            prima++;
-        }
-        faktor++;
-    }
-
-    if ((sempurna - n) == n)
-    {
-        printf("%d bilangan sempurna\n", n);
-    }
-    else if (prima == 2)
-    {
-        printf("%d bilangan prima\n", n);
+        printf("n harus lebih besar dari nol\n");
+        return 0;
     }
     else
     {
-        printf("%d bilangan biasa\n", n);
+        while (faktor <= n)
+        {
+            if (n % faktor == 0)
+            {
+                sempurna = sempurna + faktor;
+                prima++;
+            }
+            faktor++;
+        }
+
+        if ((sempurna - n) == n)
+        {
+            printf("%d bilangan sempurna\n", n);
+        }
+        else if (prima == 2)
+        {
+            printf("%d bilangan prima\n", n);
+        }
+        else
+        {
+            printf("%d bilangan biasa\n", n);
+        }
     }
 
     return 0;

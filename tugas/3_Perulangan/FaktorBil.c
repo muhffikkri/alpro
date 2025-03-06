@@ -10,19 +10,26 @@ int main()
 {
     /*Kamus*/
     int n, faktor;
-    faktor = 1;
 
     /*Algoritma*/
     scanf("%d", &n);
 
-    while (faktor <= n)
+    faktor = 1;
+    if (n <= 0)
     {
-        if (n % faktor == 0)
-        {
-            printf("%d\n", faktor);
-        }
-        faktor++;
+        printf("n harus lebih besar dari nol\n");
+        return 0;
     }
-
+    else
+    {
+        while (faktor <= n)
+        {
+            if (n % faktor == 0)
+            {
+                printf("%d\n", faktor);
+            }
+            faktor++;
+        }
+    }
     return 0;
 }
