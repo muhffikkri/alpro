@@ -9,28 +9,46 @@
 int main()
 {
     /*Kamus*/
-    int n, faktor, jumlahFaktor;
+    int n, bilangan, faktor, jumlahFaktor;
 
     /*Algoritma*/
     scanf("%d", &n);
 
-    for (int bilangan = 1; bilangan <= n; bilangan++)
+    if (n <= 0)
     {
-        faktor = 1;
-        jumlahFaktor = 0;
-
-        while (faktor <= bilangan)
+        printf("n harus lebih besar dari nol\n");
+        return 0;
+    }
+    else
+    {
+        bilangan = 0;
+        while (bilangan <= n)
         {
-            if (bilangan % faktor == 0)
+            faktor = 1;
+            jumlahFaktor = 0;
+
+            while (faktor <= bilangan)
             {
-                jumlahFaktor++;
+                if (bilangan % faktor == 0)
+                {
+                    jumlahFaktor++;
+                    faktor++;
+                }
+                else
+                {
+                    faktor++;
+                }
             }
-            faktor++;
-        }
 
-        if (jumlahFaktor == 2)
-        {
-            printf("%d\n", bilangan);
+            if (jumlahFaktor == 2)
+            {
+                printf("%d\n", bilangan);
+                bilangan++;
+            }
+            else
+            {
+                bilangan++;
+            }
         }
     }
 

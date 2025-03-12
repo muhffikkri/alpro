@@ -9,17 +9,23 @@
 int main()
 {
     /*Kamus*/
-    int n, sum;
-    sum = 0;
+    int n, i, sum;
 
     /*Algoritma*/
     scanf("%d", &n);
-    for (int i = 1; i <= n; i++)
+    sum = 0;
+    if (n <= 0)
     {
-        sum = sum + i;
+        printf("n harus lebih besar dari nol\n");
+        return 0;
     }
-
-    printf("Jumlah deret bilangan = %d\n", sum);
-
+    else
+    {
+        for (i = 1; i <= n; i++)
+        {
+            sum = sum + i;
+        }
+        printf("Jumlah deret bilangan = %d\n", sum);
+    }
     return 0;
 }

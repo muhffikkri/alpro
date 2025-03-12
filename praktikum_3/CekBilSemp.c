@@ -10,29 +10,36 @@ int main()
 {
     /*Kamus*/
     int n, faktor, jumlahFaktor;
-    faktor = 1;
-    jumlahFaktor = 0;
 
     /*Algoritma*/
     scanf("%d", &n);
 
-    while (faktor < n)
+    faktor = 1;
+    jumlahFaktor = 0;
+    if (n <= 0)
     {
-        if (n % faktor == 0)
-        {
-            jumlahFaktor = jumlahFaktor + faktor;
-        }
-        faktor++;
-    }
-
-    if (jumlahFaktor == n)
-    {
-        printf("Bilangan %d adalah bilangan sempurna\n", n);
+        printf("n harus lebih besar dari nol\n");
+        return 0;
     }
     else
     {
-        printf("Bilangan %d bukan bilangan sempurna\n", n);
-    }
+        while (faktor < n)
+        {
+            if (n % faktor == 0)
+            {
+                jumlahFaktor = jumlahFaktor + faktor;
+            }
+            faktor++;
+        }
 
+        if (jumlahFaktor == n)
+        {
+            printf("Bilangan %d adalah bilangan sempurna\n", n);
+        }
+        else
+        {
+            printf("Bilangan %d bukan bilangan sempurna\n", n);
+        }
+    }
     return 0;
 }
