@@ -1,11 +1,26 @@
-#include <stdio.h>
+/*Nama File 	: FrekNilTabel.c*/
+/*Deskripsi 	: Menampilkan bilangan yang frekuensi kemunculan nya lebih dari satu kali*/
+/*Pembuat   	: 24060124130069-Muhammad Fikri*/
+/*Tgl Pembuatan	: 5 Maret 2025 21.30*/
 
-void FrekNilTabel(int T[], int n)
+#include <stdio.h> /*header file*/
+
+/*Program Utama*/
+int main()
 {
-    int count[101] = {0}; // Asumsi nilai maksimal 100
+    /*Kamus*/
+    int T[] = {7, 4, 5, 7, 6, 5, 3, 5, 1, 4}; // Tabel
+    int n = sizeof(T) / sizeof(T[0]);         // Ukuran tabel
+
+    // Di notal nilai array gaperlu diisi dan diasumsikan kapasitas array nya 10, jadi n = 10
+
+    int count[10] = {0}; // Frekuensi kemunculan
+    int i;               // Counter
+
+    /*Algoritma*/
     printf("Elemen yang muncul lebih dari satu kali: ");
 
-    for (int i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
     {
         count[T[i]]++;
     }
@@ -20,12 +35,5 @@ void FrekNilTabel(int T[], int n)
     }
 
     printf("\n");
-}
-
-int main()
-{
-    int T[] = {7, 4, 5, 7, 6, 5, 3, 5, 1, 4};
-    int n = sizeof(T) / sizeof(T[0]);
-    FrekNilTabel(T, n);
     return 0;
 }
