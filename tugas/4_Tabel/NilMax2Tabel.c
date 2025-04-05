@@ -1,23 +1,42 @@
 /*Nama File 	: NilMax2Tabel.c*/
 /*Deskripsi 	: Menampilkan bilangan terbesar kedua dalam sebuah tabel*/
 /*Pembuat   	: 24060124130069-Muhammad Fikri*/
-/*Tgl Pembuatan	: 5 Maret 2025 21.30*/
+/*Tgl Pembuatan	: 4 April 2025 06.00*/
 
 #include <stdio.h> /*header file*/
 
-/*Program Utama*/
+// Program utama
 int main()
 {
-    /*Kamus*/
-    int T[] = {7, 4, 5, 7, 6, 5, 3, 5, 1, 4}; // Tabel
-    int n = sizeof(T) / sizeof(T[0]);         // Ukuran tabel
+    // Kamus
+    int i;          // Indeks untuk iterasi
+    int elmt;       // Elemen yang akan dimasukkan
+    int max1, max2; // Nilai maksimum pertama dan kedua
+    int n;          // Ukuran tabel
+    printf("Masukkan banyaknya elemen: ");
+    scanf("%d", &n);
+    int T[n]; // Tabel untuk menyimpan elemen
 
-    // Di notal nilai array gaperlu diisi dan diasumsikan kapasitas array nya 10, jadi n = 10
+    // Algoritma
+    printf("Masukkan elemen-elemen tabel: ");
+    i = 0;
+    while (i < n)
+    {
+        scanf("%d", &elmt);
+        if (elmt < 0)
+        {
+            printf("Nilai tidak boleh negatif\n");
+        }
+        else
+        {
+            T[i] = elmt;
+            i++;
+        }
+    }
 
-    int max1 = 0, max2 = 0; // Nilai maksimum pertama dan kedua
-    int i;                  // Counter
+    max1 = 0;
+    max2 = 0;
 
-    /*Algoritma*/
     for (i = 0; i < n; i++)
     {
         if (T[i] > max1)
@@ -25,13 +44,16 @@ int main()
             max2 = max1;
             max1 = T[i];
         }
-        else if (T[i] > max2 && T[i] < max1)
+        else
         {
-            max2 = T[i];
+            if (T[i] > max2 && T[i] != max1)
+            {
+                max2 = T[i];
+            }
         }
     }
 
-    printf("Nilai maksimum ke-2 adalah: %d\n", max2);
+    printf("Nilai maksimum ke-2 adalah %d", max2);
 
     return 0;
 }

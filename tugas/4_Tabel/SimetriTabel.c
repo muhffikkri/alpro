@@ -1,44 +1,83 @@
 /*Nama File 	: SimetriTabel.c*/
-/*Deskripsi 	: Memeriksa simetris antar 2 tabel*/
+/*Deskripsi 	: Memeriksa simetri antara ukuran dan nilai antara tabel*/
 /*Pembuat   	: 24060124130069-Muhammad Fikri*/
-/*Tgl Pembuatan	: 5 Maret 2025 21.30*/
+/*Tgl Pembuatan	: 4 April 2025 07.00*/
 
 #include <stdio.h> /*header file*/
 
-/*Program Utama*/
+// Program utama
 int main()
 {
-    /*Kamus*/
-    int T1[] = {7, 4, 5, 7, 6, 5, 3, 5, 1, 4}; // Tabel
-    int T2[] = {7, 4, 5, 7, 6, 5, 3, 5, 1, 4}; // Tabel
-    int n1 = sizeof(T1) / sizeof(T1[0]);       // Ukuran tabel
-    int n2 = sizeof(T2) / sizeof(T2[0]);       // Ukuran tabel
+    // Kamus
+    int i;       // Variabel untuk iterasi dan menghitung frekuensi
+    int elmt;    // Elemen yang akan dimasukkan
+    int simetri; // Variabel untuk menyimpan hasil simetri
+    int n1, n2;  // Ukuran  tabel
+    // Input ukuran tabel
+    printf("Masukkan ukuran tabel T1 dan T2: ");
+    scanf("%d %d", &n1, &n2);
+    int T1[n1], T2[n2]; // Tabel untuk menyimpan elemen
 
-    // Di notal nilai array gaperlu diisi dan diasumsikan kapasitas array nya 10, jadi n = 10
+    // Algoritma
+    printf("Masukkan elemen array untuk T1:\n");
+    i = 0;
+    while (i < n1)
+    {
+        // Input elemen tabel
+        scanf("%d", &elmt);
+        if (elmt < 0)
+        {
+            printf("Nilai tidak boleh negatif\n");
+        }
+        else
+        {
+            T1[i] = elmt; // Simpan elemen ke dalam tabel
+            i++;
+        }
+    }
 
-    int i; // Counter
+    printf("Masukkan elemen array untuk T2:\n");
+    i = 0;
+    while (i < n2)
+    {
+        // Input elemen tabel
+        scanf("%d", &elmt);
+        if (elmt < 0)
+        {
+            printf("Nilai tidak boleh negatif\n");
+        }
+        else
+        {
+            T2[i] = elmt; // Simpan elemen ke dalam tabel
+            i++;
+        }
+    }
 
-    /*Algoritma*/
-    if (n1 != n2) // Ukuran berbeda, tidak simetri
+    // Memeriksa simetri antara ukuran dan nilai antara tabel
+    if (n1 != n2)
     {
         printf("T1 dan T2 Tidak Simetri\n");
     }
     else
     {
-        if (n1 == n2) // Ukuran sama
+        i = 0;
+        simetri = 1; // Asumsi awal simetri
+        while (i < n1 && simetri == 1)
         {
-            for (i = 0; i < n1; i++)
+            if (T1[i] != T2[i])
             {
-                if (T1[i] != T2[i])
-                {
-                    printf("T1 dan T2 Tidak Simetri\n");
-                    i = n1;
-                }
+                simetri = 0; // Tidak simetri
             }
+            i++;
+        }
+
+        if (simetri == 1) // Jika simetri tetap 1
+        {
+            printf("T1 dan T2 Simetri\n");
         }
         else
         {
-            printf("T1 dan T2 Simetri\n");
+            printf("T1 dan T2 Tidak Simetri\n");
         }
     }
 

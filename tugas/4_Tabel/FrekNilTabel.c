@@ -1,39 +1,58 @@
 /*Nama File 	: FrekNilTabel.c*/
-/*Deskripsi 	: Menampilkan bilangan yang frekuensi kemunculan nya lebih dari satu kali*/
+/*Deskripsi 	: Menampilkan nilai element tabel T yang frekuensi kemunculan nya lebih dari satu*/
 /*Pembuat   	: 24060124130069-Muhammad Fikri*/
-/*Tgl Pembuatan	: 5 Maret 2025 21.30*/
+/*Tgl Pembuatan	: 4 April 2025 06.20*/
 
 #include <stdio.h> /*header file*/
 
-/*Program Utama*/
+// Program utama
 int main()
 {
-    /*Kamus*/
-    int T[] = {7, 4, 5, 7, 6, 5, 3, 5, 1, 4}; // Tabel
-    int n = sizeof(T) / sizeof(T[0]);         // Ukuran tabel
+    // Kamus
+    int i, j;  // Variabel untuk iterasi
+    int elmt;  // Elemen yang akan dimasukkan
+    int count; // Untuk menghitung frekuensi
+    int n;     // Ukuran tabel
+    printf("Masukkan banyaknya elemen: ");
+    scanf("%d", &n);
+    int T[n]; // Tabel untuk menyimpan elemen
 
-    // Di notal nilai array gaperlu diisi dan diasumsikan kapasitas array nya 10, jadi n = 10
-
-    int count[10] = {0}; // Frekuensi kemunculan
-    int i;               // Counter
-
-    /*Algoritma*/
-    printf("Elemen yang muncul lebih dari satu kali: ");
-
-    for (i = 0; i < n; i++)
+    // Algoritma
+    printf("Masukkan elemen-elemen tabel: ");
+    i = 0;
+    while (i < n)
     {
-        count[T[i]]++;
-    }
-
-    for (int i = 0; i < n; i++)
-    {
-        if (count[T[i]] > 1)
+        // Input elemen tabel
+        scanf("%d", &elmt);
+        if (elmt < 0)
         {
-            printf("%d ", T[i]);
-            count[T[i]] = 0; // Hindari pencetakan ulang
+            printf("Nilai tidak boleh negatif\n");
+        }
+        else
+        {
+            T[i] = elmt; // Simpan elemen ke dalam tabel
+            i++;
         }
     }
 
-    printf("\n");
+    // Tampilkan elemen dengan frekuensi lebih dari satu
+    printf("Elemen yang muncul lebih dari satu kali:\n");
+    for (i = 0; i < n; i++)
+    {
+        count = 1;
+        for (j = i + 1; j < n; j++)
+        {
+            if (T[i] == T[j] && T[j] != -1)
+            {
+                count++;
+                T[j] = -1; // Tandai elemen yang sudah dihitung
+            }
+        }
+        if (count > 1 && T[i] != -1)
+        {
+            printf("%d muncul %d kali\n", T[i], count);
+        }
+    }
+
     return 0;
 }

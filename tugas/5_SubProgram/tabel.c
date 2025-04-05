@@ -44,15 +44,7 @@ boolean IsIdxValid(TabInt T, IdxType i)
     /*Kamus Lokal*/
 
     /*Algoritma*/
-    if (i >= IdxMin && i <= IdxMax)
-    {
-        return (true);
-    }
-    else
-    {
-        return (false);
-    }
-    /*atau dipersingkat return ((i >= IdxMin) && (i <= IdxMax));*/
+    return (i >= IdxMin && i <= IdxMax);
 }
 
 boolean IsIdxEff(TabInt T, IdxType i)
@@ -62,16 +54,7 @@ boolean IsIdxEff(TabInt T, IdxType i)
     /*Kamus Lokal*/
 
     /*Algoritma*/
-    if (i >= IdxMin && i <= T.NEff)
-    {
-        return (true);
-    }
-    else
-    {
-        return (false);
-    }
-    /*atau dipersingkat return ( ( i >= IdxMin ) && ( i <= T.NEff )
- );*/
+    return (i >= IdxMin && i <= T.NEff);
 }
 
 /***************************************************************/
@@ -115,7 +98,7 @@ void PrintTabel(TabInt T)
     /* F.S : Elemen tabel ditulis ke layar, jika tidak kosong.     */
     /*       jika tabel kosong menampilkan "Tabel Kosong."         */
 
-    /*Kamus Lokasl*/
+    /*Kamus Lokal*/
     int i; /*counter*/
 
     /*Algoritma*/
@@ -139,9 +122,8 @@ void IsiTabel(TabInt *T, ElmtType N)
     /*          elemen-elemen Tabel T dengan 2 kali indexnya       */
     /* I.S : Sembarang.                                            */
     /* F.S : Tabel T terdefinisi.
-    Algor i tma-@APW-2020-ver . 1.0              Hal . 93 | 95
 
-    /*Kamus Lokasl*/
+    /*Kamus Lokal*/
     int i; /*counter*/
 
     /*Algoritma*/
@@ -192,7 +174,7 @@ ElmtType ValMin(TabInt T)
     /* Mengirimkan nilai minimum TabInt T.                         */
     /* Pre Condition : Tabel tidak kosong.                         */
 
-    /*Kamus Lokasl*/
+    /*Kamus Lokal*/
     ElmtType min; /*nilai minimum*/
     int i;        /*counter*/
 
@@ -221,14 +203,17 @@ ElmtType IdxValMax(TabInt T)
 
     /*Kamus Lokasl*/
     ElmtType indexMax; /*index nilai maksimum*/
+    ElmtType max;      /*nilai maksimum*/
     int i;             /*counter*/
 
     /*Algoritma*/
+    max = T.TI[1];
     indexMax = IdxMin;
     for (i = IdxMin + 1; i <= T.NEff; i++)
     {
-        if (T.TI[i] > indexMax)
+        if (T.TI[i] > max)
         {
+            max = T.TI[i];
             indexMax = i;
         }
     }
@@ -241,19 +226,170 @@ ElmtType IdxValMin(TabInt T)
     /* Pre Condition : Tabel tidak kosong.                         */
 
     /*Kamus Lokasl*/
-    ElmtType indexMin; /*nilai minimum*/
+    ElmtType indexMin; /*index nilai minimum*/
+    ElmtType min;      /*nilai minimum*/
     int i;             /*counter*/
 
     /*Algoritma*/
+    min = T.TI[1];
     indexMin = IdxMin;
     for (i = IdxMin + 1; i <= T.NEff; i++)
     {
-        if (T.TI[i] < indexMin)
+        if (T.TI[i] < min)
         {
+            min = T.TI[i];
             indexMin = i;
         }
     }
     return indexMin;
+}
+
+/***************************************************************/
+/*                                                             */
+/*                      TUGAS TABELSUBPROGRAM                  */
+/*                                                             */
+/***************************************************************/
+
+ElmtType NBElmt(TabInt T)
+{
+    /*Tgl Pembuatan	: 4 April 2025 13.00*/
+    /* Mengirimkan banyaknya elemen efektif tabel T, jika T kosong */
+    /* maka NBELmt=0                                               */
+
+    /*Kamus Lokal*/
+
+    /*Algoritma*/
+    return T.NEff;
+}
+
+ElmtType IdxLast(TabInt T)
+{
+    /*Tgl Pembuatan	: 4 April 2025 13.20*/
+    /* Mengirimkan nilai index efektif (NEff) tabel T sebagai   */
+    /* elemen terakhir                                          */
+
+    /*Kamus Lokal*/
+
+    /*Algoritma*/
+    return T.NEff;
+}
+
+boolean IsEqual(TabInt T1, TabInt T2)
+{
+    /*Tgl Pembuatan	: 4 April 2025 13.40*/
+    /* Mengirimkan true apabila ukuran T1 dan T2 sama dan setiap */
+    /* elemen T1 dan T2 dengan indeks yang sama bernilai sama    */
+
+    /*Kamus Lokal*/
+    int i; /*counter*/
+
+    /*Algoritma*/
+    if (T1.NEff != T2.NEff)
+    {
+        return false;
+    }
+    else
+    {
+        for (i = IdxMin; i <= T1.NEff; i++)
+        {
+            if (T1.TI[i] != T2.TI[i])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+IdxType SearchIdx(TabInt T, ElmtType X)
+{
+    /*Tgl Pembuatan	: 4 April 2025 14.00*/
+    /* Mengirimkan index terkecil di mana ditemukan X dalam T   */
+    /* jika tidak ditemuka menghasilkan index tak terdefinisi   */
+    /* (-999). Memakai skema search tanpa Boolean               */
+
+    /*Kamus Lokal*/
+    int i; /*counter*/
+
+    /*Algoritma*/
+    for (i = IdxMin; i <= T.NEff; i++)
+    {
+        if (T.TI[i] == X)
+        {
+            return i;
+        }
+    }
+    return -999;
+}
+
+boolean SearchBool(TabInt T, ElmtType X)
+{
+    /*Tgl Pembuatan	: 4 April 2025 14.20*/
+    /* Mengirimkan true apabila X ditemukan dalam T, jika tidak */
+    /* ditemukan menghasilkan false.                            */
+    /* Memakai skema serach dengan boolean                      */
+
+    /*Kamus Lokal*/
+    int i; /*counter*/
+
+    /*Algoritma*/
+    for (i = IdxMin; i <= T.NEff; i++)
+    {
+        if (T.TI[i] == X)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+void CopyTab(TabInt Tin, TabInt *Tout)
+{
+    /*Tgl Pembuatan	: 4 April 2025 14.40*/
+    /* Proses : Menyalin isi Tin ke dalam Tout dengan traversal   */
+    /* I.S : Tout sembarang, Tin terdefinisi.                     */
+    /* F.S : Tout terdefinisi, sama dengan Tin.                   */
+
+    /*Kamus Lokal*/
+    int i; /*counter*/
+
+    /*Algoritma*/
+    CreateEmpty(Tout);
+    for (i = IdxMin; i <= Tin.NEff; i++)
+    {
+        (*Tout).TI[i] = Tin.TI[i];
+        (*Tout).NEff = Tin.NEff;
+    }
+}
+
+boolean IsSimetris(TabInt T)
+{
+    /*Tgl Pembuatan	: 4 April 2025 15.00*/
+    /* Fungsi ini menghasilkan true apabila tabel T merupakan     */
+    /* tabel T merupakan tabel yang simetris, yaitu :             */
+    /* Elemen pertama sama dengan elemen terakhir,                */
+    /* Elemen kedua sama dengan elemen sebelum terakhir dan       */
+    /* seterusnya. Jumlah elemen tabel T selalu genap             */
+
+    /*Kamus Lokal*/
+    int i; /*counter*/
+
+    /*Algoritma*/
+    if (T.NEff % 2 != 0)
+    {
+        return false;
+    }
+    else
+    {
+        for (i = IdxMin; i <= T.NEff; i++)
+        {
+            if (T.TI[i] != T.TI[T.NEff - i])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 #endif

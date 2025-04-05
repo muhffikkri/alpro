@@ -109,4 +109,41 @@ ElmtType IdxValMin(TabInt T);
 /* Mengirimkan index nilai minimum TabInt T.                   */
 /* Pre Condition : Tabel tidak kosong.                         */
 
+/***************************************************************/
+/*                                                             */
+/*                      TUGAS TABELSUBPROGRAM                  */
+/*                                                             */
+/***************************************************************/
+
+ElmtType NBElmt(TabInt T);
+/* Mengirimkan banyaknya elemen efektif tabel T, jika T kosong */
+/* maka NBELmt=0                                               */
+
+ElmtType IdxLast(TabInt T);
+/* Mengirimkan index elemen terakhir tabel T.                  */
+
+boolean IsEqual(TabInt T1, TabInt T2);
+/* Mengirimkan true apabila T1=T2, yaitu apabila semua elemen  */
+/* T1 sama dengan T2, dan ukuran tabel T1=T2.                  */
+
+IdxType SearchIdx(TabInt T, ElmtType X);
+/* Mengirimkan index terkecil di mana ditemukan X dalam T      */
+/* jika tidak ditemuka menghasilkan index tak terdefinisi      */
+
+boolean SearchBool(TabInt T, ElmtType X);
+/* Mengirimkan true apabila X ditemukan dalam T, jika tidak    */
+/* ditemukan menghasilkan false.                               */
+/* Memakai skema serach dengan boolean                         */
+
+void CopyTab(TabInt Tin, TabInt *Tout);
+/* Proses : Menyalin isi Tin ke dalam Tout dengan traversal    */
+/* I.S : Tout sembarang, Tin terdefinisi.                      */
+
+boolean IsSimetris(TabInt T);
+/* Fungsi ini menghasilkan true apabila tabel T merupakan      */
+/* tabel T merupakan tabel yang simetris, yaitu :              */
+/* Elemen pertama sama dengan elemen terakhir,                 */
+/* Elemen kedua sama dengan elemen sebelum terakhir dan        */
+/* seterusnya. Jumlah elemen tabel T selalu genap              */
+
 #endif
