@@ -1,9 +1,19 @@
 #include <stdio.h>
 #include <string.h>
 
+int hitungPanjang(const char *str)
+{
+    int panjang = 0;
+    while (str[panjang] != '\0')
+    {
+        panjang++;
+    }
+    return panjang;
+}
+
 void dekripsiCaesar(char str[], int n)
 {
-    int len = strlen(str);
+    int len = hitungPanjang(str);
 
     for (int i = 0; i < len; i++)
     {
@@ -19,7 +29,7 @@ void dekripsiCaesar(char str[], int n)
 int main()
 {
     int n;
-    char str[105]; // Sesuai batasan, cukup besar untuk input
+    char str[105];
 
     scanf("%d", &n);
     scanf("%s", str);

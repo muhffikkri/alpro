@@ -1,30 +1,60 @@
-#include <stdio.h>
+/*Nama File 	: JumFrekNilTabel.c*/
+/*Deskripsi 	: Menjumlahkan nilai element tabel T yang frekuensi kemunculan nya lebih dari satu*/
+/*Pembuat   	: 24060124130069-Muhammad Fikri*/
+/*Tgl Pembuatan	: 4 April 2025 06.40*/
 
-void JumFrekNilTabel(int T[], int n)
+#include <stdio.h> /*header file*/
+
+// Program utama
+int main()
 {
-    int count[101] = {0};
-    int sum = 0;
+    // Kamus
+    int i, j;  // Variabel untuk iterasi
+    int elmt;  // Elemen yang akan dimasukkan
+    int count; // Untuk menghitung frekuensi
+    int n;     // Ukuran tabel
+    int total; // Untuk menyimpan total jumlah elemen
+    printf("Masukkan banyaknya elemen: ");
+    scanf("%d", &n);
+    int T[n]; // Tabel untuk menyimpan elemen
 
-    for (int i = 0; i < n; i++)
+    // Algoritma
+    printf("Masukkan elemen-elemen tabel: ");
+    i = 0;
+    while (i < n)
     {
-        count[T[i]]++;
-    }
-
-    for (int i = 0; i < n; i++)
-    {
-        if (count[T[i]] > 1)
+        // Input elemen tabel
+        scanf("%d", &elmt);
+        if (elmt < 0)
         {
-            sum += T[i];
+            printf("Nilai tidak boleh negatif\n");
+        }
+        else
+        {
+            T[i] = elmt; // Simpan elemen ke dalam tabel
+            i++;
         }
     }
 
-    printf("Jumlah nilai elemen yang frekuensinya lebih dari satu kali: %d\n", sum);
-}
+    // Jumlahkan elemen dengan frekuensi lebih dari satu
+    total = 0;
+    for (i = 0; i < n; i++)
+    {
+        count = 1;
+        for (j = i + 1; j < n; j++)
+        {
+            if (T[i] == T[j] && T[j] != -1)
+            {
+                count++;
+                T[j] = -1; // Tandai elemen yang sudah dihitung
+            }
+        }
+        if (count > 1 && T[i] != -1)
+        {
+            total += T[i] * count; // Tambahkan elemen ke total
+        }
+    }
+    printf("Total elemen yang muncul lebih dari satu kali adalah %d\n", total);
 
-int main()
-{
-    int T[] = {7, 4, 5, 7, 6, 5, 3, 5, 1, 4};
-    int n = sizeof(T) / sizeof(T[0]);
-    JumFrekNilTabel(T, n);
     return 0;
 }

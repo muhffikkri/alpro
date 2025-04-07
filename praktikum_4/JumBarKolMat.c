@@ -1,12 +1,49 @@
-#include <stdio.h>
+/*Nama File 	: JumBarKolMat.c*/
+/*Deskripsi 	: Menjumlahkan tiap baris dan kolom sebuah tabel*/
+/*Pembuat   	: 24060124130069-Muhammad Fikri*/
+/*Tgl Pembuatan	: 4 April 2025 07.20*/
 
-void JumBarKolMat(int T[3][3], int baris, int kolom)
+#include <stdio.h> /*header file*/
+
+/*Program Utama*/
+int main()
 {
-    // Menjumlahkan per baris
-    for (int i = 0; i < baris; i++)
+    /*Kamus*/
+    int i, j;           // Counter
+    int baris, kolom;   // Ukuran tabel
+    int elmt;           // Elemen yang akan dimasukkan
+    int sumRow, sumCol; // Jumlah per baris dan per kolom
+    scanf("%d %d", &baris, &kolom);
+    int T[baris][kolom]; // Tabel 2 dimensi
+
+    // Algoritma
+    // Input elemen tabel
+    printf("Masukkan elemen tabel:\n");
+    i = 0;
+    while (i < baris)
     {
-        int sumRow = 0;
-        for (int j = 0; j < kolom; j++)
+        j = 0;
+        while (j < kolom)
+        {
+            scanf("%d", &elmt);
+            if (elmt < 0)
+            {
+                printf("Nilai tidak boleh negatif\n");
+            }
+            else
+            {
+                T[i][j] = elmt; // Simpan elemen ke dalam tabel
+                j++;
+            }
+        }
+        i++;
+    }
+
+    // Menjumlahkan per baris
+    for (i = 0; i < baris; i++)
+    {
+        sumRow = 0;
+        for (j = 0; j < kolom; j++)
         {
             sumRow += T[i][j];
         }
@@ -14,24 +51,15 @@ void JumBarKolMat(int T[3][3], int baris, int kolom)
     }
 
     // Menjumlahkan per kolom
-    for (int j = 0; j < kolom; j++)
+    for (j = 0; j < kolom; j++)
     {
-        int sumCol = 0;
-        for (int i = 0; i < baris; i++)
+        sumCol = 0;
+        for (i = 0; i < baris; i++)
         {
             sumCol += T[i][j];
         }
         printf("Kolom ke-%d: %d\n", j + 1, sumCol);
     }
-}
 
-int main()
-{
-    int T[3][3] = {
-        {1, 3, 5},
-        {2, 5, 2},
-        {4, 2, 4}};
-
-    JumBarKolMat(T, 3, 3);
     return 0;
 }
