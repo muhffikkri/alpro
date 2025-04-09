@@ -392,4 +392,67 @@ boolean IsSimetris(TabInt T)
     }
 }
 
+// soal uts
+
+void ShiftRight(TabInt *T)
+{
+    /* Proses : Menggeser elemen-elemen tabel T ke kanan          */
+    /*          Elemen pada posisi NEff dipindahkan ke posisi N,  */
+    /*          NEff-1 ke N-1, dst. Elemen sisa diisi dengan 0.   */
+    /* I.S : T terdefinisi.                                       */
+    /* F.S : Elemen tabel T bergeser ke kanan sesuai deskripsi.   */
+
+    /* Kamus Lokal */
+    int i;
+
+    /* Algoritma */
+    for (i = IdxMax; i > IdxMax - (*T).NEff; i--)
+    {
+        (*T).TI[i] = (*T).TI[i - (IdxMax - (*T).NEff + 1)];
+    }
+    for (i = IdxMin; i <= IdxMax - (*T).NEff; i++)
+    {
+        (*T).TI[i] = 0;
+    }
+}
+
+void ShiftRightNoPointer(TabInt T, TabInt *TOut)
+{
+    /* Proses : Menggeser elemen-elemen tabel T ke kanan          */
+    /*          Elemen pada posisi NEff dipindahkan ke posisi N,  */
+    /*          NEff-1 ke N-1, dst. Elemen sisa diisi dengan 0.   */
+    /* I.S : T terdefinisi.                                       */
+    /* F.S : Elemen tabel T bergeser ke kanan sesuai deskripsi.   */
+
+    /* Kamus Lokal */
+    int i;
+
+    /* Algoritma */
+    CreateEmpty(TOut);
+    for (i = T.NEff; i >= IdxMin; i--)
+    {
+        (*TOut).TI[i + 1] = T.TI[i];
+    }
+    (*TOut).TI[IdxMin] = 0;
+    (*TOut).NEff = T.NEff;
+}
+
+void ShiftLeft(TabInt *T)
+{
+    /* Proses : Menggeser elemen-elemen tabel T ke kiri           */
+    /*          Elemen pada posisi 1 dipindahkan ke posisi 0,     */
+    /*          2 ke 1, dst. Elemen sisa diisi dengan 0.          */
+    /* I.S : T terdefinisi.                                       */
+    /* F.S : Elemen tabel T bergeser ke kiri sesuai deskripsi.    */
+
+    /* Kamus Lokal */
+    int i;
+
+    /* Algoritma */
+    for (i = IdxMin; i < (*T).NEff; i++)
+    {
+        (*T).TI[i] = (*T).TI[i + 1];
+    }
+    (*T).TI[(*T).NEff] = 0;
+}
 #endif
