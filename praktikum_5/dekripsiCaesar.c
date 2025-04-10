@@ -1,3 +1,8 @@
+/*Nama File 	: dekripsiCaesar.c*/
+/*Deskripsi 	: Melakukan dekripsi pada string*/
+/*Pembuat   	: 24060124130069-Muhammad Fikri*/
+/*Tgl Pembuatan	: 4 April 2025 04.00*/
+
 #include <stdio.h>
 #include <string.h>
 
