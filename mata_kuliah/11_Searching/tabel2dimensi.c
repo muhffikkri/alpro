@@ -51,7 +51,30 @@ int main()
     }
     printf("Kota dengan rata-rata penjualan tertinggi adalah kota %d dengan rata-rata %d\n", max_kota + 1, max_rata_rata);
 
-    // 2. Kota apa dengan penjualan tertinggi pada bulan x?
+    // 2. Bulan dengan rata rata penjualan tertinggi
+    int rata_rata_bulan[bulan];
+    for (int j = 0; j < bulan; j++)
+    {
+        int total = 0;
+        for (int i = 0; i < kota; i++)
+        {
+            total += penjualan[i][j];
+        }
+        rata_rata_bulan[j] = total / kota;
+    }
+    int max_rata_rata_bulan = rata_rata_bulan[0];
+    int max_bulan = 0;
+    for (int j = 1; j < bulan; j++)
+    {
+        if (rata_rata_bulan[j] > max_rata_rata_bulan)
+        {
+            max_rata_rata_bulan = rata_rata_bulan[j];
+            max_bulan = j;
+        }
+    }
+    printf("Bulan dengan rata-rata penjualan tertinggi adalah bulan %d dengan rata-rata %d\n", max_bulan + 1, max_rata_rata_bulan);
+
+    // 3. Kota apa dengan penjualan tertinggi pada bulan x?
     int bulan_x;
     printf("Masukkan bulan yang ingin dicari: ");
     scanf("%d", &bulan_x);
@@ -67,7 +90,7 @@ int main()
     }
     printf("Kota dengan penjualan tertinggi pada bulan %d adalah kota %d dengan penjualan %d\n", bulan_x + 1, max_kota_bulan + 1, max_penjualan);
 
-    // 3. Bulan apa dengan rata-rata penjualan tertinggi pada kota x?
+    // 4. Bulan apa dengan penjualan tertinggi pada kota x?
     int kota_x;
     printf("Masukkan kota yang ingin dicari: ");
     scanf("%d", &kota_x);
