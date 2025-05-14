@@ -8,8 +8,9 @@ int main()
 
     // Pertanyaan
     // 1. Kota apa dengan rata rata penjualan tertinggi?
-    // 2. Kota apa dengan penjualan tertinggi pada bulan x?
-    // 3. Bulan apa dengan rata rata penjualan tertinggi pada kota x?
+    // 2. Bulan dengan rata rata penjualan tertinggi
+    // 3. Kota apa dengan penjualan tertinggi pada bulan x?
+    // 4. Bulan apa dengan rata rata penjualan tertinggi pada kota x?
 
     int kota, bulan;
     printf("Masukkan jumlah bulan: ");
