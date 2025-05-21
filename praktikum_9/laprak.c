@@ -4,7 +4,7 @@ int sekuensial()
 {
     int TABNILAI[101];
     float rata_rata;
-    int i, j, count, total = 0;
+    int i, j, count, total;
     char TABGRADE[101];
     int grade[5];
 
@@ -16,6 +16,7 @@ int sekuensial()
 
     printf("\n");
 
+    total = 0;
     for (i = 0; i < 101; i++)
     {
         total += TABNILAI[i];
@@ -30,31 +31,20 @@ int sekuensial()
 
     for (i = 0; i < 101; i++)
     {
-        if (TABNILAI[i] >= 80)
+        if (TABNILAI[i] >= 80){
             TABGRADE[i] = 'A';
-
-        else if (TABNILAI[i] >= 70)
+	    grade[0] += 1;}
+        else if (TABNILAI[i] >= 70){
             TABGRADE[i] = 'B';
-
-        else if (TABNILAI[i] >= 55)
+	    grade[1] += 1;}
+        else if (TABNILAI[i] >= 55){
             TABGRADE[i] = 'C';
-
-        else if (TABNILAI[i] >= 40)
+	   grade[2] += 1;}
+        else if (TABNILAI[i] >= 40){
             TABGRADE[i] = 'D';
-
-        else
-            TABGRADE[i] = 'E';
-    }
-
-    for (j = 0; j < 5; j++)
-    {
-        count = 0;
-        for (i = 0; i < 101; i++)
-        {
-            if (TABGRADE[i] == grade[j])
-                count++;
-        }
-        printf("Jumlah mahasiswa dengan grade %c: %d\n", grade[j], count);
+	grade[3] += 1;}
+        else {
+            TABGRADE[i] = 'E';grade[4] += 1;}
     }
 
     return 0;
@@ -67,9 +57,15 @@ int searching1()
     int i;
     int n = 101;
     int x;
-    scanf("%d", &n);
-    int TABMK[n];
-    int NMK;
+    int sentinel;
+    int t[n];
+
+
+sentinel = x
+t[n+1] = sentinel
+i = 0; while (t[i] != x) {i++} if(i <= 101) {
+
+return 0;
 }
 
 int searching2()
