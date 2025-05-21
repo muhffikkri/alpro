@@ -26,7 +26,7 @@ int sekuensial()
 
     for (j = 0; j < 5; j++)
     {
-        TABGRADE[j] = 0;
+        grade[j] = 0;
     }
 
     for (i = 0; i < 101; i++)
@@ -58,6 +58,8 @@ int sekuensial()
         }
     }
 
+    printf("%.2f", rata_rata);
+    printf("\n");
     for (i = 0; i < 5; i++)
     {
         printf(grade[i]);
